@@ -29,6 +29,9 @@
             </div>
         </div>
     @endif
+    <a methods="post" href="{{route('export.excel')}}">
+        Download
+    </a>
 </div>
 
 </body>

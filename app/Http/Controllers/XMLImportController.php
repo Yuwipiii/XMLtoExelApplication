@@ -24,7 +24,6 @@ class XMLImportController extends Controller
             $categories = $this->parseCategories($xml->shop->categories->category);
             $this->importOffers($xml->shop->offers->offer, $categories);
         });
-
         return redirect()->back()->with('message',"XML imported Successfully");
     }
 
@@ -56,6 +55,7 @@ class XMLImportController extends Controller
             $subSubCategory = $subSubCategoryId ? $categories[$subSubCategoryId]['name'] : null;
             $offerData = [
                 'product_id' =>$offer['id']->__toString() ,
+                'name' => (string)$offer->name,
                 'url' => (string)$offer->url,
                 'price' => (float)$offer->price,
                 'old_price' => (float)$offer->oldprice,
@@ -65,7 +65,6 @@ class XMLImportController extends Controller
                 'sub_sub_category' => $subSubCategory,
                 'available' => filter_var((string)$offer['available'], FILTER_VALIDATE_BOOLEAN),
                 'picture' => (string)$offer->picture,
-                'name' => (string)$offer->name,
                 'vendor' => isset($offer->vendor) ? (string)$offer->vendor : null,
             ];
             Product::updateOrCreate(['name'=>$offer['name']], $offerData);
