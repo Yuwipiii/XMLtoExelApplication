@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('picture');
             $table->string('name');
-            $table->string('currencyId');
+            $table->string('currency_id');
             $table->integer('old_price');
             $table->string('vendor');
             $table->timestamps();

@@ -18,7 +18,8 @@ class Product extends Model
         'price',
         'picture',
         'name',
-        'currencyId',
-        'old_price'
+        'currency_id',
+        'old_price',
+        'product_id'
     ];
 }
