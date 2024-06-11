@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('currencyId');
             $table->integer('old_price');
+            $table->string('vendor');
             $table->timestamps();
         });
     }
