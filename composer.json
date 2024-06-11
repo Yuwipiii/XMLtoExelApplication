@@ -7,6 +7,8 @@
     "require": {
         "php": "^8.3",
         "ext-simplexml": "*",
+        "almasaeed2010/adminlte": "~3.2",
+        "jeroennoten/laravel-adminlte": "^3.11",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "maatwebsite/excel": "^3.1"
