@@ -20,6 +20,7 @@ class Product extends Model
         'name',
         'currency_id',
         'old_price',
-        'product_id'
+        'product_id',
+        'vendor'
     ];
 }
